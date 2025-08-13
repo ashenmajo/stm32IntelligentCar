@@ -137,7 +137,7 @@ uint8_t read_stable_state(uint16_t pin) {
     uint8_t count = 0;
     for (uint8_t i = 0; i < 5; i++) {
         if (GPIO_ReadInputDataBit(GPIOB, pin)) count++;
-        Delay_ms(1);
+        Delay_ms(1);//取平均值
     }
     return (count >= 3) ? 1 : 0;
 }
