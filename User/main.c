@@ -26,12 +26,12 @@ void turn_right(void)      { Rspeed = 50;  Lspeed = 0;   update_motor_speed(); }
 void stop_motors(void)     { Rspeed = 0;   Lspeed = 0;   update_motor_speed(); }
 
 int main(void) {
-    Usart3_Init();
-    OLED_Init();
-    Motor_Init();
-    HCSR04_Init();
-    TCRT_Init();
-    Warning_Init();
+    Usart3_Init();//蓝牙串口
+    OLED_Init();//显示屏
+    Motor_Init();//电机
+    HCSR04_Init();//超声波
+    TCRT_Init();//红外
+    Warning_Init();//检测到前方由障碍时点亮PC3
 
     srand(SysTick->VAL);
     while (1) {
